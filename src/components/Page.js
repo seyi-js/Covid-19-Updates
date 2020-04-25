@@ -100,7 +100,7 @@ const Page = ( props ) => {
                         <li className="list-group-item"><strong>Deaths: </strong> {deaths}</li>
                         
                       </ul> 
-                   )) : ''}
+                   )) : <h1>oops! No updates Yet. Check back later</h1>}
                     
                       
                                 
