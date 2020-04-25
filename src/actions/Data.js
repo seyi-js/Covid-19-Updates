@@ -6,9 +6,13 @@ import Axios from 'axios'
 export const getCountries = () =>dispatch=> {
     const config = {
         headers: {
+            "content-type":"application/octet-stream",
             "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
             "x-rapidapi-key": "5a57d20919mshc11ff26dc91a95ap1e7118jsn4488e1c111d1"
-        }
+        },
+        "params":{
+            "format":"json"
+            }
     }//Returns Array
     Axios
         .get( "https://cors-anywhere.herokuapp.com/https://covid-19-data.p.rapidapi.com/help/countries", config )

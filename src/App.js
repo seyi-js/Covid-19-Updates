@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
-
+import {BrowserRouter as Router} from 'react-router-dom'
 import Page from './components/Page';
 
  const App = () => {
@@ -13,7 +13,10 @@ import Page from './components/Page';
   return (
     <React.Fragment>
       <Provider store={ store }>
-      <Page />
+        <Router>
+          <Page />
+        </Router>
+     
       </Provider>
       
     </React.Fragment>
