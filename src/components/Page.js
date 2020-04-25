@@ -17,7 +17,7 @@ const Page = ( props ) => {
     const [country, setCountry] = useState('Afgahnistan')
     const [isOpen, setIsOpen] = useState(false)
     useEffect( () => {
-        store.dispatch(getDataTotals())
+       
         store.dispatch(getCountries())
     }, [] )
   const   toggle = () => {
@@ -25,7 +25,9 @@ const Page = ( props ) => {
              !isOpen
          );
     }
-
+    useEffect( () => {
+        getDataTotals()
+},[])
     
     const { dataTotals, countries, dataList } = props.data;
     // console.log( dataList.provinces )
