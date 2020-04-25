@@ -49,7 +49,7 @@ const Page = ( props ) => {
                    
                     <NavItem>
                         <NavLink>
-                            <a href="https://github.com/seyi-js/repositories/" target="_blank" style={ { color: 'white', textDecoration: 'none' } }><i className="fab fa-github"></i> GitHub </a>
+                            <a href="https://github.com/seyi-js/repositories/" rel="noopener noreferrer" target="_blank" style={ { color: 'white', textDecoration: 'none' } }><i className="fab fa-github"></i> GitHub </a>
                         </NavLink>
                     </NavItem>
                     
