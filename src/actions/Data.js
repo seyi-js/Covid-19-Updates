@@ -11,7 +11,7 @@ export const getCountries = () =>dispatch=> {
         }
     }//Returns Array
     Axios
-        .get( "https://covid-19-data.p.rapidapi.com/help/countries", config )
+        .get( "https://cors-anywhere.herokuapp.com/https://covid-19-data.p.rapidapi.com/help/countries", config )
         .then( res => dispatch( {
             type: GET_COUNTRIES,
             payload: res.data
@@ -37,7 +37,7 @@ export const getDataByCountry = (country) =>dispatch=> {
     }
 
     Axios
-        .get( "https://covid-19-data.p.rapidapi.com/country", config )
+        .get( "https://cors-anywhere.herokuapp.com/https://covid-19-data.p.rapidapi.com/country", config )
         .then( res => dispatch( {
             type: GET_DATA,
             payload: res.data
@@ -60,7 +60,7 @@ export const  getDataTotals = () =>dispatch=> {
     } 
     
     Axios
-        .get( "https://covid-19-data.p.rapidapi.com/totals", config )
+        .get( "https://cors-anywhere.herokuapp.com/https://covid-19-data.p.rapidapi.com/totals", config )
         .then( res => dispatch( {
             type: GET_TOTALS,
             payload: res.data
