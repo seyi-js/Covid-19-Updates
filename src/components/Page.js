@@ -26,7 +26,7 @@ const Page = ( props ) => {
          );
     }
     useEffect( () => {
-        getDataTotals()
+        store.dispatch(getDataTotals())
 },[])
     
     const { dataTotals, countries, dataList } = props.data;
