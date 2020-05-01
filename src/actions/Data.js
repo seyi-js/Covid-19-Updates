@@ -53,7 +53,7 @@ export const getDataByCountry = (country) =>dispatch=> {
 
 export const getDataTotals = () => dispatch => {
     
-    console.log(key)
+    // console.log(key)
     const config = {
         "headers":{
             "content-type":"application/octet-stream",
