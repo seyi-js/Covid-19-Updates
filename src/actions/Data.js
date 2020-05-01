@@ -51,12 +51,14 @@ export const getDataByCountry = (country) =>dispatch=> {
 
 //GET Totals 
 
-export const  getDataTotals = () =>dispatch=> {
+export const getDataTotals = () => dispatch => {
+    const key = process.env.REACT_APP_API_KEY
+    console.log(key)
     const config = {
         "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"covid-19-data.p.rapidapi.com",
-            "x-rapidapi-key": process.env.API_KEY
+            "x-rapidapi-key": {key}
         },
         "params": {
             "format":"json"
