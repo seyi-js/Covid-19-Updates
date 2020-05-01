@@ -8,7 +8,7 @@ export const getCountries = () =>dispatch=> {
         headers: {
             "content-type":"application/octet-stream",
             "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-            "x-rapidapi-key": "5a57d20919mshc11ff26dc91a95ap1e7118jsn4488e1c111d1"
+            "x-rapidapi-key": process.env.API_KEY
         },
         "params":{
             "format":"json"
@@ -30,7 +30,7 @@ export const getDataByCountry = (country) =>dispatch=> {
         "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"covid-19-data.p.rapidapi.com",
-            "x-rapidapi-key":"5a57d20919mshc11ff26dc91a95ap1e7118jsn4488e1c111d1"
+            "x-rapidapi-key": process.env.API_KEY
         },
         "params": {
             "format":"json",
@@ -56,7 +56,7 @@ export const  getDataTotals = () =>dispatch=> {
         "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"covid-19-data.p.rapidapi.com",
-            "x-rapidapi-key":"5a57d20919mshc11ff26dc91a95ap1e7118jsn4488e1c111d1"
+            "x-rapidapi-key": process.env.API_KEY
         },
         "params": {
             "format":"json"
