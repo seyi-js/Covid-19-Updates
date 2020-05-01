@@ -58,7 +58,7 @@ export const getDataTotals = () => dispatch => {
         "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"covid-19-data.p.rapidapi.com",
-            "x-rapidapi-key": {key}
+            "x-rapidapi-key": key
         },
         "params": {
             "format":"json"
