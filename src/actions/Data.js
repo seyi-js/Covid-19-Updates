@@ -13,7 +13,7 @@ export const getCountries = () =>dispatch=> {
         "params":{
             "format":"json"
             }
-    }//Returns Array
+    }
     Axios
         .get( "https://cors-anywhere.herokuapp.com/https://covid-19-data.p.rapidapi.com/help/countries", config )
         .then( res => dispatch( {
@@ -36,7 +36,7 @@ export const getDataByCountry = (country) =>dispatch=> {
             "format":"json",
             "name":country
             }
-//Gives An Array
+
       
     }
 
@@ -53,7 +53,7 @@ export const getDataByCountry = (country) =>dispatch=> {
 
 export const getDataTotals = () => dispatch => {
     
-    // console.log(key)
+   
     const config = {
         "headers":{
             "content-type":"application/octet-stream",
@@ -72,4 +72,4 @@ export const getDataTotals = () => dispatch => {
             payload: res.data
         }) )
     .catch(err=> console.log(err))
-}// Gives An Array
+}
