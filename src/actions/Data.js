@@ -1,7 +1,7 @@
 import { GET_DATA, GET_TOTALS, GET_COUNTRIES } from './types'
 import Axios from 'axios'
 
-const key = process.env.REACT_APP_API_KEY
+const key = process.env.REACT_APP_API_KEY 
 //Get Countries
 export const getCountries = () =>dispatch=> {
     const config = {

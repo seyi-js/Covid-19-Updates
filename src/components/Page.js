@@ -16,6 +16,7 @@ import {
 } from 'reactstrap';
 import Spinner from './Spinner'
 const Page = ( props ) => {
+    const [count, setCountry] = useState('')
     const [ isOpen, setIsOpen ] = useState( false )
 
 
@@ -37,12 +38,38 @@ const Page = ( props ) => {
         store.dispatch( getDataTotals() )
     }, [] )
 
+    useEffect( () => {
+
+        let name = localStorage.getItem( 'country' )
+        // console.log(name)
+        if ( name !== null) {
+            setCountry( name ) 
+            getData( name )
+            // localStorage.removeItem('country')
+        } else {
+            
+            setCountry( 'Nigeria' ) 
+            console.log('yeeey')
+            getData("Nigeria")
+        }
+
+        
+        
+
+       
+      
+       
+    // localStorage.getItem('country')
+    },[])
+
     const { dataTotals, countries, dataList } = props.data;
     // console.log( dataList.provinces )
 
     //Get Data By Country
     const getData = ( countryName ) => {
         // e.preventDefault();
+        localStorage.setItem( 'country', countryName )
+        setCountry(countryName)
         store.dispatch( getDataByCountry( countryName ) )
     }
 
@@ -90,9 +117,10 @@ const Page = ( props ) => {
 
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlSelect1">Choose Country</label>
-                                <select className="form-control" id="exampleFormControlSelect1" onChange={ ( e ) => getData( e.target.value ) } >
-
+                                <select className="form-control" id="exampleFormControlSelect1" value={count} onChange={ ( e ) => getData( e.target.value ) } >
+                                    <option value="" selected disabled hidden>{ count}</option>
                                     { countries.map( ( { name, i } ) => (
+                                        
                                         <option key={ i }>{ name }</option>
 
                                     ) ) }
